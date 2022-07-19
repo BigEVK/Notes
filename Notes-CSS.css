@@ -1,0 +1,135 @@
+/* CSS Variables */
+/* The Pseduo Class goes before the * in that it is Pseduo (before) */
+/* It represents the root of the tree representing the document */
+:root {
+    /* Your don't need "main"
+    --orange: #fb4f14; would workgit srtatus */
+    --main-bg-color: #002244;
+    --main-border-color: #fb4f14;
+    }
+*
+/* you use var() to tell the element to refernce the vairable above */
+/* Having multiple sections with the same color alows you to use one variable in
+the event you want to change them all at the same time and not have to rename
+each one */
+.main-header {
+    background: var(--main-bg-color);
+}
+
+/* CSS Selectors */
+
+/* [attr*=value] - Represents elements with an attribute name of ATTR whose value contains at least one occurnace
+of VALUE within the string. */
+/* This will look for the src attribute that has a 200 and change the border to red */
+img[src*="200"] {
+    border: red 5px solid;
+    }
+
+/* Added .resources .links to show that it doesn't display initially. Then below we use 
+.resources:hover .links to show the links when hovered over */
+/* also, adding .resource means resources is a CLASS. Without a . it is a (something else) */
+.resources .links {
+    display: none;
+    padding: 1% 0;
+  }
+  
+.resources:hover .links {
+    display: block; 
+  }    
+
+/* Media Queries - usually places toward the bottom of the style sheet*/
+
+/* ctrl + shift + i will open developer tools */
+/* the screen background color changes when the screen size lower than 980 pixels */
+@media screen and (max-width: 980px) {
+    body {
+     background-color: rgb(192, 227, 255);
+}
+}
+@media screen and (max-width: 768px) {
+    body {
+        background-color: rgb(148, 175, 198);
+    /* the font size is made just a bit larger than the original size */
+        font-size: 125%;
+    }
+}
+@media screen and (max-widht: 575px) {
+    body {
+        background-color: rgb(100, 120, 136);
+        font-size: 125%
+    }
+}
+
+/* Flexbox Properties */
+
+/* can be added to different selectors in the file */
+/* default direction is Row, or horizontal, and no wrap, but you can change it to column as below */
+section {
+    display: flex;
+    /* This creates the container for a specified selector */
+    flex-wrap: wrap;
+    /* wraps the text to the next line instead of trying to squish it all together */
+    justify-content: space-around;
+    /* applies even spacing before, between, and after each box element - were and element to wrap it would then 
+    be in the middle of the screen*/
+    justify-content: flex-end;
+    /* moves content to the end, or right side, of the container */
+    justify-content: flex-start;
+    /* moves content to the beginning, or left side, of the container */
+    flex-direction: column;
+    /* moves the contianer into a column */
+    padding: 10px 10px 10px 60px;
+}
+
+/* adding shadows to text or boxes */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+/* horizontal offset / vertical offset / blur radius / color */
+text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+/* pesudo element */
+/* settign border-raduis: 50% is a quikc way to turn an element into a perfectly round circle or oval */
+border-radius: 50%;
+
+/* Pseudo-classes */
+/* default state */
+button {
+    background: white;
+  }
+  
+  /* mouse is hovering over button */
+  button:hover {
+    background: red;
+  }
+  
+  /* button is in focus because it was the most recently clicked element on the page */
+  button:focus {
+    background: green;
+  }
+  
+  /* user is actively pressing the cursor down on the button */
+  button:active {
+    background: blue;
+  }
+
+  /* FOCUS */
+
+  /* This makes the form input's default state slightly transparent, 
+  then switches to full opaqueness when the input is in focus */
+  .form-input {
+    background-color: rgba(255,255,255, 0.75);
+  }
+  
+  /* create a new rule for focus state */
+  .form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    /* sometimes there will be an existing border around the selected box so to get rid 
+    of that we add the following */
+    outline: none;
+  }
+  /* Variables */
+  /* The custom property is defined using two hyphens (--) and then any name you'd like. */
+  div {
+      --favorite-color: blue;
+      color: var(--favorite-color);
+      box-shadow: 5px 5px 10px var(--favorite-color);
+  }
