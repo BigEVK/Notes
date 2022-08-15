@@ -4,6 +4,8 @@ select database(); -- shows current database
 USE <database>; -- Switches to that database
 CREATE TABLE
 SELECT * FROM candidates; -- a query that will return all rows of data in a table, this one is called candidates
+ALTER TABLE -- allows you to add a new field, delet an existing field, o rmodify a field.
+ALTER TABLE candidates ADD COLUMN party_id INTEGER;
 
 VARCHAR - variable character
 
