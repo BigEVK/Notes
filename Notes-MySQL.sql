@@ -10,7 +10,7 @@ ALTER TABLE candidates ADD COLUMN party_id INTEGER;
 VARCHAR - variable character
 
 
-DROP DATABASE election;
+DROP DATABASE election; -- deletes a table
 
 CREATE TABLE candidates (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
